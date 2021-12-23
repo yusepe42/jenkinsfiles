@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Etapa 2'){
             steps {
-                echo 'Etapa 2'
+                echo 'Etapa 21'
                 echo "el dispositivo es: $params.UDID"
             }
         }
