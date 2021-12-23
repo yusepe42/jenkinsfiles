@@ -5,8 +5,10 @@ pipeline {
         stage('Etapa 1 establemcemos parametros') {
             steps {
                 echo 'Hello World'
-                properties([parameters([string(description: 'Debe suministrar el UDID del iphone que se dejara enchufado para compilaciones y test, para consultarlo: Xcode->Window->Devices and Simulators y en el iphone que se usará el cambio Identifier... Pegar en el valor que aparace.', name: 'UDID', trim: true)])])
-                
+                script{ 
+                properties([parameters([
+                    string(description: 'Debe suministrar el UDID del iphone que se dejara enchufado para compilaciones y test', name: 'UDID')])])
+                } 
             }
         }
         stage('Etapa 2'){
