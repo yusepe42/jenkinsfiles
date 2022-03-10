@@ -1,8 +1,8 @@
 def triggers = []
 if ("$BRANCH_NAME" == 'main') {
-triggers << cron('11 * * * *')
+triggers << cron('12 * * * *')
 } else if ("$BRANCH_NAME" == 'release') {
-triggers << cron('11 * * * *')
+triggers << cron('12 * * * *')
 }
 properties (
 [
