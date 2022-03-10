@@ -1,9 +1,7 @@
+/* programador de ejecucion cada 1 minuto , tiene que ejecutarse 1 vez para que se aplique el cambio
 def triggers = []
 if ("$BRANCH_NAME" == 'main') {
     triggers << cron('* * * * *')
-} else if ("$BRANCH_NAME" == 'release') {
-    triggers << cron('H/2 * * * *')
-}
 
 properties (
     [
@@ -12,24 +10,7 @@ properties (
 )
 pipeline {
     environment {
-//       BRANCH_NAME="main"
-//     }
-//     def triggers = []
-//       if("$BRANCH_NAME" == 'main') {
-//         triggers << cron('42 11 * * *') // every 15 minutes
-//     } else if("$BRANCH_NAME" == 'release') {
-//        triggers << cron('34 12 * * *') // daily between midnight & 2 AM
-//     } else {
-//     // no scheduled build
-//     }
-// properties (
-//     [
-//         pipelineTriggers(triggers)
-//     ]
-// )
-// triggers {
-//       cron( env.BRANCH_NAME.equals('main') ? '56 11 * * *' : '')
-//   }
+*/
     agent any
     stages {
         stage('Etapa 1 establemcemos parametros') {
