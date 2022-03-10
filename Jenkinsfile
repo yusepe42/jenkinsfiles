@@ -1,8 +1,11 @@
 pipeline {
+    environmen{
+      BRANCH_NAME="main"
+    }
     def triggers = []
-      if("env.BRANCH_NAME" == 'main') {
+      if("$BRANCH_NAME" == 'main') {
         triggers << cron('20 12 * * *') // every 15 minutes
-    } else if("env.BRANCH_NAME" == 'release') {
+    } else if("$BRANCH_NAME" == 'release') {
        triggers << cron('22 12 * * *') // daily between midnight & 2 AM
     } else {
     // no scheduled build
