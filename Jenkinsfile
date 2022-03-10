@@ -10,6 +10,7 @@ properties (
 )*/
 pipeline {
     environment {
+    }  
     agent any
     stages {
         stage('Etapa 1 establemcemos parametros') {
