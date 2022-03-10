@@ -1,10 +1,10 @@
 pipeline {
-    environmen{
+    environment {
       BRANCH_NAME="main"
     }
     def triggers = []
       if("$BRANCH_NAME" == 'main') {
-        triggers << cron('32 12 * * *') // every 15 minutes
+        triggers << cron('42 11 * * *') // every 15 minutes
     } else if("$BRANCH_NAME" == 'release') {
        triggers << cron('34 12 * * *') // daily between midnight & 2 AM
     } else {
