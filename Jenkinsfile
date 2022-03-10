@@ -1,13 +1,14 @@
 def triggers = []
 if ("$BRANCH_NAME" == 'main') {
-triggers << cron('14 * * * *')
+    triggers << cron('* * * * *')
 } else if ("$BRANCH_NAME" == 'release') {
-triggers << cron('14 * * * *')
+    triggers << cron('H/2 * * * *')
 }
+
 properties (
-[
-pipelineTriggers(triggers)
-]
+    [
+        pipelineTriggers(triggers)
+    ]
 )
 pipeline {
     environment {
