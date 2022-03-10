@@ -4,9 +4,9 @@ pipeline {
     }
     def triggers = []
       if("$BRANCH_NAME" == 'main') {
-        triggers << cron('20 12 * * *') // every 15 minutes
+        triggers << cron('32 12 * * *') // every 15 minutes
     } else if("$BRANCH_NAME" == 'release') {
-       triggers << cron('22 12 * * *') // daily between midnight & 2 AM
+       triggers << cron('34 12 * * *') // daily between midnight & 2 AM
     } else {
     // no scheduled build
     }
