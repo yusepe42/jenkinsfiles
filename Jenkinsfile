@@ -10,6 +10,7 @@ properties (
 )*/
 pipeline {
     environment {
+    VARIABLE="establezco una variable para que environment no este vacio"
     }  
     agent any
     stages {
