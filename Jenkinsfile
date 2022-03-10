@@ -1,3 +1,14 @@
+def triggers = []
+if ("$BRANCH_NAME" == 'main') {
+triggers << cron('11 * * * *')
+} else if ("$BRANCH_NAME" == 'release') {
+triggers << cron('11 * * * *')
+}
+properties (
+[
+pipelineTriggers(triggers)
+]
+)
 pipeline {
     environment {
 //       BRANCH_NAME="main"
@@ -15,9 +26,9 @@ pipeline {
 //         pipelineTriggers(triggers)
 //     ]
 // )
-triggers {
-      cron( env.BRANCH_NAME.equals('main') ? '56 11 * * *' : '')
-  }
+// triggers {
+//       cron( env.BRANCH_NAME.equals('main') ? '56 11 * * *' : '')
+//   }
     agent any
     stages {
         stage('Etapa 1 establemcemos parametros') {
