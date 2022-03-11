@@ -1,7 +1,7 @@
 /* programador de ejecucion cada 1 minuto , tiene que ejecutarse 1 vez para que se aplique el cambio
 */
 def triggers = []
-if ("$BRANCH_NAME.toLowerCase().trim" == 'main') {
+if ("$BRANCH_NAME.toLowerCase().trim()" == 'main') {
     triggers << cron('* * * * *')
 }
 properties (
