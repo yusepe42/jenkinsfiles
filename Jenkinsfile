@@ -3,7 +3,7 @@
 def triggers = []
 if ("$BRANCH_NAME" == 'MAIN') {
     triggers << cron('* * * * *')
-
+}
 properties (
     [
         pipelineTriggers(triggers)
