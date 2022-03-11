@@ -15,16 +15,16 @@ pipeline {
         stage('Etapa 1 establemcemos parametros') {
             steps {
                 echo 'Hello World'
-                script{ 
-                properties([parameters([
-                    string(description: 'Debe suministrar el UDID del iphone que se dejara enchufado para compilaciones y test', name: 'UDID')])])
-                } 
+                // script{ 
+                // properties([parameters([
+                //     string(description: 'Debe suministrar el UDID del iphone que se dejara enchufado para compilaciones y test', name: 'UDID')])])
+                // } 
             }
         }
         stage('Etapa 2'){
             steps {
                 echo 'Etapa 21'
-                echo "el dispositivo es: $params.UDID"
+               // echo "el dispositivo es: $params.UDID"
             }
         }
         
