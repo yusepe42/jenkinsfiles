@@ -1,13 +1,14 @@
 /* programador de ejecucion cada 1 minuto , tiene que ejecutarse 1 vez para que se aplique el cambio
+*/
 def triggers = []
-if ("$BRANCH_NAME" == 'main') {
+if ("$BRANCH_NAME" == 'MAIN') {
     triggers << cron('* * * * *')
 
 properties (
     [
         pipelineTriggers(triggers)
     ]
-)*/
+)
 pipeline {
     agent any
     stages {
