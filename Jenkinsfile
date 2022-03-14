@@ -12,6 +12,19 @@ properties (
 pipeline {
     agent any
     stages {
+        stage('SetupParameters') {
+            steps {
+                 script {
+                    properties([
+                      parameters([
+                          booleanParam(defaultValue: true, description: '', name: 'DEBUG'),
+                          booleanParam(defaultValue: false, description: 'Endpoints', name: 'RELEASE'),
+                          booleanParam(defaultValue: true, description: '', name: 'DEVELOPMENT'),
+                          booleanParam(defaultValue: false, description: '', name: 'QA'),
+                          booleanParam(defaultValue: false, description: '', name: 'PRODUCTION')])])
+                  }
+            }
+         }
         stage('Etapa 1 establemcemos parametros') {
             steps {
                 echo 'Hello World'
