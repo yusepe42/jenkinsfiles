@@ -2,7 +2,7 @@
 
 def triggers = []
 if ("$BRANCH_NAME" == 'WEF-2244') {
-    triggers << cron('* 0 * * *')
+    triggers << cron('H 0 * * *')
 }
 properties (
     [
